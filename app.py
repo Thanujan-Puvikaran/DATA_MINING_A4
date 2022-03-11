@@ -1,19 +1,21 @@
 from conf import SOURCE
 import requests
 import json
+import io
 
 
 def get_resources():
     response_library = requests.get(SOURCE.URL_LIBRARY).json()
     response_university = requests.get(SOURCE.URL_UNIVERSITY).json()
     response_secondary = requests.get(SOURCE.URL_SECONDARY).json()
-    with open("response_library.json", "a") as file:
-        file.write(json.dumps(response_library))
-        
-    with open("response_university.json", "a") as file:
-        file.write(json.dumps(response_university))
+    with io.open("response_library.json", "w") as file:
+        file.write(json.dumps(response_library).encode().decode('unicode_escape'))
+ 
 
-    with open("response_secondary.json", "a") as file:
+    with io.open("response_university.json", "w") as file:
+        file.write(json.dumps(response_university).encode().decode('unicode_escape'))
+
+    with open("response_secondary.json", "w") as file:
         file.write(json.dumps(response_secondary))
     return response_library, response_university, response_secondary
 
