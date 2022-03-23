@@ -1,0 +1,76 @@
+{
+    "@context": {
+        "@vocab": "http://www.semanticweb.org/ontologies/projet_webdataming",
+        "@base": "http://www.semanticweb.org/ontologies/projet_webdataming",
+        "xsd": "http://www.w3.org./2001/XMLSchema#",
+        
+        "datasetid":null,
+        "recordid":null,
+
+        "nature_uai": null,
+		"denomination_principale": {
+            "@id": "nom",
+            "@type": "xsd:string"
+        },
+		"longitude": {
+            "@type": "xsd:float"
+        },
+		"code_region": null,
+		"code_commune": {
+            "@id": "codepostale",
+            "@type": "xsd:string"
+        },
+		"secteur_prive_code_type_contrat": null,
+		"libelle_commune": {
+            "@id": "ville",
+            "@type": "xsd:string"
+        },
+		"libelle_region": {
+            "@id": "region",
+            "@type": "xsd:string"
+        },
+		"localite_acheminement_uai": null,
+		"etat_etablissement_libe": null,
+		"date_ouverture": null,
+		"localisation": null,
+		"code_departement": {
+            "@id": "departement",
+            "@type": "xsd:string"
+        },
+		"libelle_departement": null,
+		"numero_uai": null,
+		"appellation_officielle": null,
+		"adresse_uai": {
+            "@id": "adresse",
+            "@type": "xsd:string"
+        },
+		"coordonnee_y": null,
+		"latitude": {
+            "@type": "xsd:float"
+        },
+		"position": null,
+		"epsg": null,
+		"secteur_prive_libelle_type_contrat": null,
+		"libelle_ministere": null,
+		"appariement": null,
+		"code_ministere": null,
+		"etat_etablissement": null,
+		"code_academie": null,
+		"code_postal_uai": null,
+		"nature_uai_libe": {
+            "@id": "nature",
+            "@type": "xsd:string"
+        },
+		"libelle_academie": {
+            "@id": "academie",
+            "@type": "xsd:string"
+        },
+		"secteur_public_prive_libe": {
+            "@id": "statut",
+            "@type": "xsd:string"
+        },
+		"coordonnee_x": null,
+        "geometry": null,
+        "record_timestamp":null
+    }
+}
