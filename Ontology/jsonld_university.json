@@ -3,9 +3,11 @@
         "@vocab": "http://www.semanticweb.org/ontologies/projet_webdataming",
         "@base": "http://www.semanticweb.org/ontologies/projet_webdataming",
         "xsd": "http://www.w3.org./2001/XMLSchema#",
-
+        
+        "class" : "@type",
         "code_uai": null,
         "n_siret": null,
+        
         "type_detablissement": {
             "@id": "nature",
             "@type": "xsd:string"

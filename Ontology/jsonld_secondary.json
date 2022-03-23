@@ -4,6 +4,7 @@
         "@base": "http://www.semanticweb.org/ontologies/projet_webdataming",
         "xsd": "http://www.w3.org./2001/XMLSchema#",
         
+        "class" : "@type",
         "datasetid":null,
         "recordid":null,
 

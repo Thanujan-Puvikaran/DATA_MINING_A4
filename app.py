@@ -42,35 +42,42 @@ def preprocessing():
                 data.append(e)
                 
         for e in data:
+            e["class"] = "Bibliotheque"
             e["lat"] = e["fields"]["coordonnees_finales"][0]
             e["long"] = e["fields"]["coordonnees_finales"][1]
             
             
         with io.open("data_library.json", "w") as file:
             file.write(json.dumps(data))
-    """
-    with open("response_university.json", "r") as f:
-        file= f.readlines()
-        for el in file:
-            data = json.loads(el)
-        with io.open("data_university.json", "w", encoding="utf-8") as file:
-            s = json.dumps(data).replace("\u00e9","é").replace("\u00e8", "è")
-            print(s)
-            file.write(s)
-    """
+
+
+
+
     
     with open("response_university.json", "r") as f:
         file= f.readlines()
-        for el in file:
-            data = json.loads(el)
+    for el in file:
+        el = json.loads(el)
+        data = list()
+        
+        for e in data:
+            e["class"] = "Superieur"
+                
         with io.open("data_university.json", "w") as file:
             file.write(json.dumps(data))
             
     
+    
+    
+    
     with open("response_secondary.json", "r") as f:
         file= f.readlines()
-        for el in file:
-            data = json.loads(el)
+    for el in file:
+        el = json.loads(el)
+        data = list()
+        
+        for e in data:
+            e["class"] = "Secondaire"
         with io.open("data_secondary.json", "w") as file:
             file.write(json.dumps(data))
         

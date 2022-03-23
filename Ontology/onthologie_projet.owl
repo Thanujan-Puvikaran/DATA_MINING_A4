@@ -155,9 +155,9 @@ universite : statut</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/projet_webdataming#Bibliothèque -->
+    <!-- http://www.semanticweb.org/ontologies/projet_webdataming#Bibliotheque -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#Bibliothèque">
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#Bibliotheque">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/projet_webdataming#Etablissement"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/projet_webdataming#EtablissementScolaire"/>
     </owl:Class>
@@ -182,14 +182,13 @@ universite : statut</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#Secondaire">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/projet_webdataming#EtablissementScolaire"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/projet_webdataming#Université"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/projet_webdataming#Université -->
+    <!-- http://www.semanticweb.org/ontologies/projet_webdataming#Superieur -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#Université">
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#Superieur">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/projet_webdataming#EtablissementScolaire"/>
     </owl:Class>
 </rdf:RDF>
