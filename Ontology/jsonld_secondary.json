@@ -2,6 +2,7 @@
     "@context": {
         "@vocab": "http://www.semanticweb.org/ontologies/projet_webdataming#",
         "@base": "http://www.semanticweb.org/ontologies/projet_webdataming#",
+        "projet": "http://www.semanticweb.org/ontologies/projet_webdataming#",
         
         "class" : "@type",
         "datasetid":null,
