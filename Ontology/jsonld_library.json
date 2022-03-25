@@ -1,0 +1,57 @@
+{
+    "@context": {
+        "@vocab": "http://www.semanticweb.org/ontologies/projet_webdataming#",
+        "@base": "http://www.semanticweb.org/ontologies/projet_webdataming#",
+        "projet": "http://www.semanticweb.org/ontologies/projet_webdataming#",
+
+        "class" : "@type",
+        "datasetid":null,
+        "recordid":null,
+        
+        "coordonnees_finales": null,
+		"code_ua": null,
+		"coordonnees_ban": null,
+		"cp": {
+            "@id": "codepostal",
+            "@type": "xsd:string"
+        },
+		"dept": {
+            "@id": "departement",
+            "@type": "xsd:string"
+        },
+        "cedexb":null,
+		"coordonnees_insee": null,
+		"comment": null,
+		"libelle1": {
+            "@id": "nom",
+            "@type": "xsd:string"
+        },
+        "libelle2": null,
+        "local": null,
+		"surface": null,
+		"insee": null,
+		"regi": null,
+		"adresse_ville": {
+            "@id": "ville",
+            "@type": "xsd:string"
+        },
+		"type_adresse": null,
+		"voie": {
+            "@id": "adresse",
+            "@type": "xsd:string"
+        },
+		"pop_com": null,
+		"amplitude_horaire": null,
+		"code_bib": null,
+        "geometry": null,
+        "record_timestamp": null,
+        "lat": {
+            "@id": "latitude",
+            "@type": "xsd:float"
+        },
+        "long": {
+            "@id": "longitude",
+            "@type": "xsd:float"
+        }
+    }
+}

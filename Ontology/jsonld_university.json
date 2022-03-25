@@ -1,0 +1,68 @@
+{
+    "@context": {
+        "@vocab": "http://www.semanticweb.org/ontologies/projet_webdataming#",
+        "@base": "http://www.semanticweb.org/ontologies/projet_webdataming#",
+        "projet": "http://www.semanticweb.org/ontologies/projet_webdataming#",
+        
+        "class" : "@type",
+        "code_uai": null,
+        "n_siret": null,
+        
+        "type_detablissement": {
+            "@id": "nature",
+            "@type": "xsd:string"
+        },
+        "nom": {
+            "@type": "xsd:string"
+        },
+
+        "sigle": null,
+        "statut": {
+            "@type": "xsd:string"
+        },
+        "tutelle": null,
+        "universite_de_rattachement_libelle": null,
+        "universite_de_rattachement_id_et_url_onisep": null,
+        "etablissements_lies_libelles": null,
+        "etablissements_lies_url_et_id_onisep": null,
+        "boite_postale": null,
+        "adresse": {
+            "@type": "xsd:string"
+        },
+        "cp":{
+            "@id": "codepostal",
+            "@type": "xsd:string"
+        },
+        "commune": {
+            "@id": "ville",
+            "@type": "xsd:string"
+        },
+        "commune_cog": null,
+        "cedex": null,
+        "telephone": {
+            "@type": "xsd:string"
+        },
+        "arrondissement": null,
+        "departement": {
+            "@type": "xsd:string"
+        },
+        "academie": {
+            "@id": "academie",
+            "@type": "xsd:string"
+        },
+        "region": {
+            "@type": "xsd:string"
+        },
+        "region_cog": null,
+        "longitude_x": {
+            "@id": "longitude",
+            "@type": "xsd:float"
+        },
+        "latitude_y": {
+            "@id": "latitude",
+            "@type": "xsd:float"
+        },
+        "journees_portes_ouvertes": null,
+        "url_et_id_onisep": null
+    }
+}
