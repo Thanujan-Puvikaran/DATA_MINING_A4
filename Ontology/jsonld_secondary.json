@@ -16,6 +16,8 @@
 		"longitude": {
             "@type": "xsd:float"
         },
+        "boite_postale_uai":null,
+        "lieu_dit_uai":null,
 		"code_region": null,
 		"code_commune": {
             "@id": "codepostal",

@@ -1,10 +1,6 @@
 import json
 from rdflib import Graph, parser
 
-
-
-
-
 def convert(name:str):
     with open(f"data_{name}.json", "r") as f:
         data = json.load(f)
