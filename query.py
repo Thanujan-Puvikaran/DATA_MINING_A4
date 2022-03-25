@@ -1,4 +1,4 @@
-from pyfuseki import FusekiUpdate,FusekiQuery
+from pyfuseki import FusekiQuery
 import haversine as hs
 from operator import itemgetter
 
