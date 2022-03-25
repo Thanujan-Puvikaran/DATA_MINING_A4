@@ -11,13 +11,14 @@
 		"code_ua": null,
 		"coordonnees_ban": null,
 		"cp": {
-            "@id": "codepostale",
+            "@id": "codepostal",
             "@type": "xsd:string"
         },
 		"dept": {
             "@id": "departement",
             "@type": "xsd:string"
         },
+        "cedexb":null,
 		"coordonnees_insee": null,
 		"comment": null,
 		"libelle1": {

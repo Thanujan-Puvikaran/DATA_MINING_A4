@@ -29,7 +29,7 @@
             "@type": "xsd:string"
         },
         "cp":{
-            "@id": "codepostale",
+            "@id": "codepostal",
             "@type": "xsd:string"
         },
         "commune": {

@@ -39,9 +39,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/projet_webdataming#codepostale -->
+    <!-- http://www.semanticweb.org/ontologies/projet_webdataming#codepostal -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#codepostale">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#codepostal">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/projet_webdataming#Etablissement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -155,9 +155,9 @@ universite : statut</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/projet_webdataming#Bibliotheque -->
+    <!-- http://www.semanticweb.org/ontologies/projet_webdataming#Bibliothèque -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#Bibliotheque">
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/projet_webdataming#Bibliothèque">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/projet_webdataming#Etablissement"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/projet_webdataming#EtablissementScolaire"/>
     </owl:Class>

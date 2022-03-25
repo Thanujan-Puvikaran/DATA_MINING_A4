@@ -8,7 +8,8 @@
         "recordid":null,
 
         "nature_uai": null,
-		"denomination_principale": {
+		"denomination_principale": null,
+        "patronyme_uai":{
             "@id": "nom",
             "@type": "xsd:string"
         },
@@ -17,7 +18,7 @@
         },
 		"code_region": null,
 		"code_commune": {
-            "@id": "codepostale",
+            "@id": "codepostal",
             "@type": "xsd:string"
         },
 		"secteur_prive_code_type_contrat": null,
