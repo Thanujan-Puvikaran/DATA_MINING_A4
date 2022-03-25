@@ -18,7 +18,7 @@ def getValueFromJson(query_result):
     return lst
 
 def getRegions(): 
-    print("Query regions")
+
     querSecond = """
     PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -43,10 +43,10 @@ def getRegions():
     qresUni = getValueFromJson(fuseki_query.run_sparql(querUni))
 
     regions = set(qresSecond+qresUni)
-    return regions
+    return list(regions)
 
 def getDepartements(region): 
-    print("Query regions")
+
     querSecond = """
     PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -74,10 +74,10 @@ def getDepartements(region):
 
     departements = set(qresSecond+qresUni)
 
-    return departements
+    return list(departements)
 
 def getVille(departement): 
-    print("Query regions")
+
     querSecond = """
     PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -106,10 +106,9 @@ def getVille(departement):
 
     villes = set(qresSecond+qresUni)
 
-    return villes
+    return list(villes)
 
 def getNatureEcole(ville): 
-    print("Query regions")
     querSecond = """
     PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -139,51 +138,51 @@ def getNatureEcole(ville):
 
     villes = set(qresSecond+qresUni)
 
-    return villes
+    return list(villes)
 
-def getEcoles(ville,natures): 
+def getEcoles(ville,nature): 
     ecoles = []
-    for nature in natures : 
 
-        querSecond = """
-        PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    querSecond = """
+    PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-        SELECT DISTINCT ?nom 
-        WHERE {
-            ?a rdf:type projet:Secondaire .
-            ?a projet:fields [projet:nature "%s"^^<xsd:string>] .
-            ?a projet:fields [projet:ville "%s"^^<xsd:string> ] .
-            ?a projet:fields [projet:nom ?nom ] .
-        }   
-        """%(nature,ville)
-        qresSecond = getValueFromJson(fuseki_query.run_sparql(querSecond))
+    SELECT DISTINCT ?nom 
+    WHERE {
+        ?a rdf:type projet:Secondaire .
+        ?a projet:fields [projet:nature "%s"^^<xsd:string>] .
+        ?a projet:fields [projet:ville "%s"^^<xsd:string> ] .
+        ?a projet:fields [projet:nom ?nom ] .
+    }   
+    """%(nature,ville)
+    qresSecond = getValueFromJson(fuseki_query.run_sparql(querSecond))
 
-        for x in qresSecond :
-            ecoles.append(nature + " | " + x )
-        querUni = """
-        PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    for x in qresSecond :
+        ecoles.append(nature + " | " + x )
+    querUni = """
+    PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-        SELECT DISTINCT ?nom 
-        WHERE {
-            ?a rdf:type projet:Superieur .
-            ?a projet:nature "%s"^^<xsd:string> .
-            ?a projet:ville "%s"^^<xsd:string>  .
-            ?a projet:nom ?nom  .
-        }   
-        """%(nature,ville)
+    SELECT DISTINCT ?nom 
+    WHERE {
+        ?a rdf:type projet:Superieur .
+        ?a projet:nature "%s"^^<xsd:string> .
+        ?a projet:ville "%s"^^<xsd:string>  .
+        ?a projet:nom ?nom  .
+    }   
+    """%(nature,ville)
 
-        qresUni = getValueFromJson(fuseki_query.run_sparql(querUni))
+    qresUni = getValueFromJson(fuseki_query.run_sparql(querUni))
 
-        for x in qresUni :
-            ecoles.append(nature + " | " + x )
+    for x in qresUni :
+        ecoles.append(nature + " | " + x )
         
     return ecoles
 
 def getCoordonneesEcole(ecole,ville): 
 
     nom = ecole.split(" | ")[1]
+
     querSecond = """
     PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -193,12 +192,12 @@ def getCoordonneesEcole(ecole,ville):
         ?a rdf:type projet:Secondaire .
         ?a projet:fields [projet:nom "%s"^^<xsd:string> ] .
         ?a projet:fields [projet:ville "%s"^^<xsd:string> ] .
-        ?a projet:longitude ?longitude .
-        ?a projet:latitude ?latitude .
+        ?a projet:fields [projet:longitude ?longitude] .
+        ?a projet:fields [projet:latitude ?latitude] .
     }   
     """%(nom,ville)
-    qresSecond = getValueFromJson(fuseki_query.run_sparql(querSecond))
 
+    qresSecond = getValueFromJson(fuseki_query.run_sparql(querSecond))
     querUni = """
     PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -220,7 +219,7 @@ def getCoordonneesEcole(ecole,ville):
     else : 
         return qresUni[0]
 
-def getCordonneesBiblio(departement):
+def getCordonneesBiblio():
 
     querBib = """
     PREFIX projet: <http://www.semanticweb.org/ontologies/projet_webdataming#>    
@@ -231,9 +230,8 @@ def getCordonneesBiblio(departement):
         ?a rdf:type projet:Bibliotheque .
         ?a projet:longitude ?longitude .
         ?a projet:latitude ?latitude .
-        ?a projet:fields [projet:departement "%s"^^<xsd:string>] .
     }   
-    """%(departement)
+    """
 
     coords = []
     qresBib = getValueFromJson(fuseki_query.run_sparql(querBib))   
@@ -267,8 +265,16 @@ def getBibInfo(coords):
         qresBib = getValueFromJson(fuseki_query.run_sparql(querBib))
 
         for x in qresBib:
+            x.append(coord[0])
+            x.append(coord[1])
             x.append(coord[2])
 
         biblios.append(qresBib[0])
 
     return biblios
+
+
+def getBiblios(coordsBibs,coordEcole):
+    bibsProches = calculDistance(coordEcole,coordsBibs,5)
+    bibsInfos = getBibInfo(bibsProches)
+    return bibsInfos
