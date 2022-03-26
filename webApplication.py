@@ -32,16 +32,19 @@ with selectors:
     region_col, departement_col, ville_col, niveau_col, ecole_col= st.columns(5)
 
     regionslst = query.getRegions()
+    regionslst.sort()
     regionslst.insert(0,"")
     region = region_col.selectbox("Région",regionslst)
 
     if region != "" :
         deplst = query.getDepartements(region)
+        deplst.sort()
         deplst.insert(0,"")
         dep = departement_col.selectbox("Département",deplst)
     try:
         if dep != "" :
             villeslst = query.getVille(dep)
+            villeslst.sort()
             villeslst.insert(0,"")
             ville = ville_col.selectbox("Ville",villeslst)
     except BaseException:
@@ -50,6 +53,7 @@ with selectors:
     try:
         if ville != "" :
             niveauxlst = query.getNatureEcole(ville)
+            niveauxlst.sort()
             niveauxlst.insert(0,"")
             niveau = niveau_col.selectbox("Niveaux",niveauxlst)
     except BaseException:
@@ -58,6 +62,7 @@ with selectors:
     try:
         if len(niveau) != 0:
             ecoleslst = query.getEcoles(ville,niveau)
+            ecoleslst.sort()
             ecoleslst.insert(0,"")
             ecole = ecole_col.selectbox("Ecole",ecoleslst)
             coordsEcole = query.getCoordonneesEcole(ecole,ville)
